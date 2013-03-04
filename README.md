@@ -1,4 +1,4 @@
 freebsd-ports-updating-json
 ===========================
 
-JSON feed and fancy output for /usr/ports/UPDATING
+JSON feed and fancy, searchable, mobile-friendly output for ```/usr/ports/UPDATING```
