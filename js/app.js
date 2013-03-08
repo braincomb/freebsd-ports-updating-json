@@ -1,4 +1,4 @@
-var App = angular.module('App', []);
+var App = angular.module('App', [loading]);
  
 App.controller('DisplayController', function($scope, $http, $timeout) {
 	$http.get('UPDATING.json').then(function(result){
