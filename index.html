@@ -25,6 +25,7 @@
           <script>document.write("<base href=\"" + document.location + "\" />");</script>
           <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
           <script src="js/app.js"></script>
+          <script src="js/loading.js"></script>
           <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         </head>
         <body ng-controller="DisplayController">
@@ -54,6 +55,7 @@
 
           <div class="container">
 
+            <div ng-controller="LoadingController" id="loading"><span ng-show="loading"><img src="img/loader.gif" /></span></div>
             <div class="row">
               <div class="entry span6 offset3" ng-repeat="entry in entries.updating | filter:searchText">
                 <div class="entry-header">
