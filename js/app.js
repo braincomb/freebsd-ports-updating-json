@@ -1,4 +1,4 @@
-var App = angular.module('App', ['loading']);
+var App = angular.module('App', ['loading', 'infinite-scroll']);
 
 App.controller('DisplayController', function($scope, $http, $timeout) {
   $http.get('UPDATING.json').then(function(result){
@@ -18,6 +18,15 @@ App.controller('DisplayController', function($scope, $http, $timeout) {
       $scope.filterText = tempFilterText;
     }, 200)
   });
+
+  var itemsToShow = 10;
+  $scope.scrollLimit = function() {
+    return itemsToShow;
+  };
+
+  $scope.loadMore = function() {
+    itemsToShow = itemsToShow + 10;
+  };
 
 });
 
