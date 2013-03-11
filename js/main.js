@@ -1,1 +1,1 @@
-
+$(".brand").popover();
