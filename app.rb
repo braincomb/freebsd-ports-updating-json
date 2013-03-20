@@ -18,16 +18,15 @@ OUTPUT_FILE = File.dirname(__FILE__) + "/UPDATING.json"
 USE_REMOTE = true
 
 def parse_updating_file
-  hash = { :last_updated => Time.now, :updating => [] }
+  hash = { :updating => [] }
   date = affects = author = content = ''
-  index = 0
   getcontent = false
   
   remote_data = open(INPUT_URL, :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE) if USE_REMOTE == true
   IO.foreach(USE_REMOTE ? remote_data : INPUT_FILE) do |line|
     if line =~ /^\d{8}(:)/
       if !content.empty?
-        hash[:updating] << { :index => index += 1, :date => date, :affects => affects, :author => author, :content => content }
+        hash[:updating] << { :date => date, :affects => affects, :author => author, :content => content }
       end
     getcontent = false
     content = ''
