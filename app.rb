@@ -44,8 +44,11 @@ def parse_updating_file
 end
 
 def create_json(hash)
-  File.open(OUTPUT_FILE, "w") do |f|
-    f.write(JSON.pretty_generate hash)
+  current_json = JSON.parse(File.read(OUTPUT_FILE)) if File.file?(OUTPUT_FILE)
+  unless hash.to_json == current_json.to_json
+    File.open(OUTPUT_FILE, "w") do |f|
+      f.write(JSON.pretty_generate hash)
+    end
   end
 end
 
