@@ -42,6 +42,7 @@ App.filter('dates', function () {
   }
 });
 
+// TODO: search highlight.
 angular.module('ui.filters').filter('highlight', function () {
   return function (text, search, caseSensitive) {
     if (search || angular.isNumber(search)) {

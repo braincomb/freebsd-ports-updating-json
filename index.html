@@ -54,7 +54,7 @@
 
             <div ng-controller="LoadingController" id="loading"><span ng-show="loading"><img src="img/loader.gif" /></span></div>
             <div class="row">
-              <div class="entry span6 offset3" ng-repeat="entry in entries.updating | filter:searchText | limitTo: scrollLimit()">
+              <div class="entry span6 offset3" ng-repeat="entry in entries.updating | filter:filterText | limitTo: scrollLimit()">
                 <div class="entry-header">
                   <h3>date <span>{{entry.date | dates}}</span></h3>
                 </div>
