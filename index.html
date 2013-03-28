@@ -45,7 +45,7 @@
                     <li><a href="http://github.com/braincomb/freebsd-ports-updating-json">@GitHub</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
-                <form class="navbar-form"><input id="searchText" type="search" placeholder="live search..." ng-model="searchText" /></form>
+                <form class="navbar-form"><input id="searchText" type="search" placeholder="live search..." ng-model="searchText" ui-reset /></form>
               </div>
             </div>
           </div>
@@ -54,7 +54,7 @@
 
             <div ng-controller="LoadingController" id="loading"><span ng-show="loading"><img src="img/loader.gif" /></span></div>
             <div class="row">
-              <div class="entry span6 offset3" ng-repeat="entry in entries.updating | filter:filterText | limitTo: scrollLimit()">
+              <div class="entry span6 offset3" ng-repeat="entry in entries.updating | filter:searchText | limitTo: scrollLimit()">
                 <div class="entry-header">
                   <h3>date <span>{{entry.date | dates}}</span></h3>
                 </div>
@@ -86,6 +86,7 @@
 
             <script src="js/main.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+            <script src="https://raw.github.com/angular-ui/angular-ui/master/build/angular-ui.min.js"></script>
             <script src="js/app.js"></script>
             <script src="js/loading.js"></script>
             <script src="js/ng-infinite-scroll.min.js"></script>

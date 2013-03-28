@@ -91,7 +91,7 @@ p, h3 {
 .entry-header h3 {
   margin: 0;
   line-height: 22px;
-  color: #D3D3D3;
+  color: #E4E4E4;
   font-size: 20px;
 }
 
@@ -157,4 +157,40 @@ p, h3 {
 	width: 100px;
 	margin: 0 auto;
 }
+
+/* highlight filter */
+.ui-match {
+  background: yellow;
+}
+
+/* search field ui-reset */
+.ui-resetwrap {
+display: inline-block;
+position: relative;
+}
+
+.ui-reset {
+display: none;
+position: absolute;
+cursor: pointer;
+top: 0;
+right: 0;
+z-index: 2;
+height: 14px;
+width: 14px;
+background-image: url("http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings.png");
+background-position: -48px -96px;
+background-repeat: no-repeat;
+line-height: 14px;
+margin: 13px 5px;
+vertical-align: text-top;
+}
+
+.ui-resetwrap:hover .ui-reset {
+display: block;
+}
+
+
+
+
 

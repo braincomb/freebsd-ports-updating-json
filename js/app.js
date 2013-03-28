@@ -1,4 +1,4 @@
-var App = angular.module('App', ['loading', 'infinite-scroll']);
+var App = angular.module('App', ['loading', 'infinite-scroll', 'ui']);
 
 App.controller('DisplayController', function($scope, $http, $timeout) {
   $http.get('UPDATING.json').then(function(result){
@@ -40,4 +40,20 @@ App.filter('dates', function () {
   return function(text) {
     return text.replace(/^(\d{4})(\d{2})(\d{2})/g, "$1-$2-$3");
   }
+});
+
+angular.module('ui.filters').filter('highlight', function () {
+  return function (text, search, caseSensitive) {
+    if (search || angular.isNumber(search)) {
+      text = text.toString();
+      search = search.toString();
+      if (caseSensitive) {
+        return text.split(search).join('<span class="highlight-match">' + search + '</span>');
+      } else {
+        return text.replace(new RegExp(search, 'gi'), '<span class="highlight-match">$&</span>');
+      }
+    } else {
+      return text;
+    }
+  };
 });
