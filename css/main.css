@@ -101,9 +101,7 @@ p, h3 {
 
 .entry-body {
   position: relative;
-  max-height: 400px;
   padding: 15px;
-  overflow-y: auto;
 }
 
 .entry-form {
