@@ -42,16 +42,15 @@ App.filter('dates', function () {
   }
 });
 
-// TODO: search highlight.
-angular.module('ui.filters').filter('highlight', function () {
+App.filter('highlight', function () {
   return function (text, search, caseSensitive) {
     if (search || angular.isNumber(search)) {
       text = text.toString();
       search = search.toString();
       if (caseSensitive) {
-        return text.split(search).join('<span class="highlight-match">' + search + '</span>');
+        return text.split(search).join('<span class="ui-match">' + search + '</span>');
       } else {
-        return text.replace(new RegExp(search, 'gi'), '<span class="highlight-match">$&</span>');
+        return text.replace(new RegExp(search, 'gi'), '<span class="ui-match">$&</span>');
       }
     } else {
       return text;

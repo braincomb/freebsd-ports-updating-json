@@ -59,10 +59,10 @@
                   <h3>date <span>{{entry.date | dates}}</span></h3>
                 </div>
                 <div class="entry-header">
-                  <h3>affects <span>{{entry.affects}}</span></h3>
+                  <h3>affects <span ng-bind-html-unsafe="entry.affects | highlight: filterText"></span></h3>
                 </div>
                 <div class="entry-body">
-                  <p ng-bind-html-unsafe="entry.content | newlines"></p>
+                  <p ng-bind-html-unsafe="entry.content | newlines | highlight: filterText"></p>
                 </div>
                 <div class="entry-footer">
                   <p>{{entry.author}}</p>
