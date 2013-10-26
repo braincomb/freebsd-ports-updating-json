@@ -56,7 +56,7 @@
             <div class="row">
               <div class="entry span6 offset3" ng-repeat="entry in entries.updating | filter:filterText | limitTo: scrollLimit()">
                 <div class="entry-header">
-                  <h3>date <span>{{entry.date | dates}}</span></h3>
+                  <h3>date <span ng-bind-html-unsafe="entry.date | dates"></span></h3>
                 </div>
                 <div class="entry-header">
                   <h3>affects <span ng-bind-html-unsafe="entry.affects | highlight: filterText"></span></h3>
@@ -65,7 +65,7 @@
                   <p ng-bind-html-unsafe="entry.content | newlines | highlight: filterText"></p>
                 </div>
                 <div class="entry-footer">
-                  <p>{{entry.author}}</p>
+                  <p ng-bind-html-unsafe="entry.author"></p>
                 </div>
               </div>
             </div>
